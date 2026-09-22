@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="zh-CN" class="no-js">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>归舟·1955 —— 香烟纸上的万里归途｜沉浸式红色剧本杀 · 浙大校史主题</title>
+<meta name="description" content="1955 年，被软禁五年的钱学森把一封写在香烟纸上的求援信送出封锁线。七到九位玩家分处万里邮路的七个节点，其中最重的一环在求是园。史实与虚构严格区分的沉浸式红色剧本杀。">
+<meta name="theme-color" content="#0c0a08">
+<meta property="og:title" content="归舟·1955 —— 香烟纸上的万里归途">
+<meta property="og:description" content="排万难、冒百死，以求真知。一封香烟纸上的求援信，一条万里邮路，一场求是精神的接力。">
+<meta property="og:type" content="website">
+
+<!-- 字体全部取自系统已装的思源宋体 / 思源黑体（Noto Serif SC / Noto Sans SC），
+     不引外链，离线双击打开即为最终效果，展演现场无网络也能正常渲染。 -->
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- ============ 全局质感层：胶片颗粒 / 暗角 / 呼吸 ============ -->
+<div class="grain" aria-hidden="true"></div>
+<div class="vignette" aria-hidden="true"></div>
+<div class="breathe" aria-hidden="true"></div>
+<div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
+
+<!-- ============ 导航 ============ -->
+<nav class="nav" id="nav" aria-label="章节导航">
+  <div class="nav-inner">
+    <a class="nav-brand" href="#hero">
+      <span class="seal-mini" aria-hidden="true">归</span>
+      <span class="nav-brand-text">归舟<span class="nav-brand-dot">·</span>1955</span>
+    </a>
+
+    <button class="nav-toggle" id="navToggle" aria-label="展开章节导航" aria-expanded="false" aria-controls="navLinks">
+      <span></span><span></span><span></span>
+    </button>
+
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#about">概述</a></li>
+      <li><a href="#timeline">纪年</a></li>
+      <li><a href="#roles">图鉴</a></li>
+      <li><a href="#highlights">亮点</a></li>
+      <li><a href="#endings">结局</a></li>
+      <li><a href="#quotes">信笺</a></li>
+      <li><a href="#showcase">展演</a></li>
+    </ul>
+  </div>
+</nav>
+
+<main id="top">
+
+<!-- ══════════════════════════════════════════════════════════
+     1　首屏 Hero：1955 深夜书房
+     ══════════════════════════════════════════════════════════ -->
+<header class="hero" id="hero">
+  <div class="hero-stage" id="heroStage" aria-hidden="true">
+
+    <!-- 远处的大洋与船帆剪影 -->
+    <div class="hero-sea">
+      <div class="hero-sea-glow"></div>
+      <svg class="hero-boat" viewBox="0 0 340 210" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="sailGrad" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="#e8dcc4" stop-opacity="0.30"/>
+            <stop offset="100%" stop-color="#c9b68f" stop-opacity="0.06"/>
+          </linearGradient>
+        </defs>
+        <path d="M162 34 Q214 96 162 146 Q116 96 162 34 Z" fill="url(#sailGrad)"/>
+        <path d="M170 58 Q206 108 170 146 Q140 108 170 58 Z" fill="#e8dcc4" opacity="0.09"/>
+        <line x1="162" y1="34" x2="162" y2="152" stroke="#e8dcc4" stroke-opacity="0.22" stroke-width="1.6"/>
+        <path d="M46 152 Q162 194 284 152 L258 164 Q162 186 68 164 Z" fill="#07060a" opacity="0.88"/>
+        <path d="M14 176 Q88 166 162 176 T330 176" stroke="#e8dcc4" stroke-opacity="0.10" stroke-width="1.4" fill="none"/>
+        <path d="M0 192 Q92 183 182 192 T360 192" stroke="#e8dcc4" stroke-opacity="0.07" stroke-width="1.2" fill="none"/>
+      </svg>
+    </div>
+
+    <!-- 台灯光锥（跟随鼠标偏移） -->
+    <div class="hero-beam" id="heroBeam">
+      <span class="hero-beam-cone"></span>
+      <span class="hero-beam-core"></span>
+    </div>
+
+    <!-- 台灯实体 -->
+    <div class="hero-lamp">
+      <span class="lamp-shade"></span>
+      <span class="lamp-neck"></span>
+      <span class="lamp-base"></span>
+      <span class="lamp-bulb"></span>
+    </div>
+
+    <!-- 桌面与旧纸张 -->
+    <div class="hero-desk">
+      <span class="desk-leaf desk-leaf-a"></span>
+      <span class="desk-leaf desk-leaf-b"></span>
+      <span class="desk-paper"></span>
+      <span class="desk-pen"></span>
+    </div>
+  </div>
+
+  <div class="hero-inner">
+    <div class="hero-copy">
+      <p class="hero-kicker reveal">沉浸式红色剧本杀 · 四幕五场 · 校史主题</p>
+
+      <h1 class="hero-title reveal">
+        <span class="hero-title-cn">归舟</span>
+        <span class="hero-title-sep" aria-hidden="true"></span>
+        <span class="hero-title-year">1955</span>
+      </h1>
+
+      <p class="hero-sub reveal">香烟纸上的万里归途</p>
+    <span class="hero-rule reveal" aria-hidden="true"></span>
+
+    <p class="hero-lead reveal">
+      一九五五年，被软禁五年的钱学森，把一封求援信写在一小片香烟纸上送出封锁线。
+      信要跨过大洋，经比利时、上海、北京，才能成为日内瓦谈判桌上的铁证——
+      而美方的线人，已经循着墨迹的味道潜了进来。
+    </p>
+
+    <div class="hero-meta reveal">
+      <span class="chip">7 人（可扩至 9 人）</span>
+      <span class="chip">约 3 小时</span>
+      <span class="chip">阵营 · 情感 · 推理</span>
+      <span class="chip chip-key">无凶案 · 有内鬼</span>
+    </div>
+
+    <p class="hero-slogan reveal">排万难、冒百死，以求真知<span class="hero-slogan-dot">。</span></p>
+    </div><!-- /hero-copy -->
+
+    <!-- 虚拟复刻香烟纸：鼠标悬浮掀起一角 -->
+    <div class="cig-paper reveal" id="cigPaper" tabindex="0" role="group" aria-label="香烟纸求援信复刻件，悬浮或聚焦可掀开一角">
+      <div class="cig-paper-inner">
+        <div class="cig-folds" aria-hidden="true"></div>
+
+        <p class="cig-line cig-line-1">叔通太老师先生：</p>
+        <p class="cig-line cig-line-2">无一日、一时、一刻</p>
+        <p class="cig-line cig-line-3">不思归国参加伟大的建设高潮。</p>
+        <p class="cig-line cig-sign">钱学森谨上<span>1955.6.15</span></p>
+
+        <div class="cig-corner" aria-hidden="true">
+          <span class="cig-corner-face"></span>
+          <span class="cig-corner-back"></span>
+        </div>
+      </div>
+      <p class="cig-meta"><span class="chip chip-ghost">香烟纸 · 三百字 · 改了三遍</span></p>
+      <p class="cig-hint">· 轻触或悬浮，掀开这一角 ·</p>
+    </div>
+
+    <a class="scroll-cue" href="#about" aria-label="向下滚动，进入作品概述">
+      <span class="scroll-cue-track" aria-hidden="true"><span class="scroll-cue-dot"></span></span>
+      <span class="scroll-cue-text">向下 · 一九五五</span>
+    </a>
+  </div>
+</header>
+
+<!-- ══════════════════════════════════════════════════════════
+     2　作品概述
+     ══════════════════════════════════════════════════════════ -->
+<section class="section" id="about">
+  <div class="wrap">
+    <header class="sec-head reveal">
+      <span class="sec-no">壹</span>
+      <h2 class="sec-title">作品概述</h2>
+      <p class="sec-en">THE WORK · 归舟 · 1955</p>
+    </header>
+
+    <p class="sec-lead reveal">
+      一部面向高校思政展演与校园剧本杀活动的原创红色史实剧本。主线是
+      <em>钱学森求援信</em>，枢纽是<em>竺可桢为国内情报链的关键节点</em>——
+      七到九位玩家，分处这条万里邮路的七个节点，其中最重的一个节点，在求是园。
+    </p>
+
+    <!-- 剧本定位 -->
+    <div class="about-grid">
+      <article class="card reveal">
+        <p class="card-label">剧本定位</p>
+        <p class="card-value">7—9 人</p>
+        <p class="card-desc">7 人主线 + 2 位浙大可选拓展角色 + 主持人（DM）</p>
+      </article>
+      <article class="card reveal">
+        <p class="card-label">类型</p>
+        <p class="card-value">阵营 · 情感 · 推理</p>
+        <p class="card-desc">无凶案、有内鬼；分幕读本 + 搜证私聊 + 幕末抉择</p>
+      </article>
+      <article class="card reveal">
+        <p class="card-label">时长</p>
+        <p class="card-value">约 3 小时</p>
+        <p class="card-desc">四幕 + 终局，每幕 30—45 分钟，含齐读信文仪式</p>
+      </article>
+      <article class="card reveal">
+        <p class="card-label">主题落点</p>
+        <p class="card-value">浙大校史 · 求是精神</p>
+        <p class="card-desc">竺可桢线（精神）与范绪箕线（情义）双线加厚</p>
+      </article>
+    </div>
+
+    <!-- 核心亮点 -->
+    <h3 class="sub-title reveal">三处核心亮点</h3>
+    <div class="about-grid about-grid-3">
+      <article class="card card-flat reveal">
+        <span class="card-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M4 5.5A1.5 1.5 0 0 1 5.5 4H10v16H5.5A1.5 1.5 0 0 1 4 18.5z"/><path d="M14 4h4.5A1.5 1.5 0 0 1 20 5.5v13a1.5 1.5 0 0 1-1.5 1.5H14z"/><path d="M12 3v18"/></svg>
+        </span>
+        <p class="card-value">史实与虚构严格区分</p>
+        <p class="card-desc">
+          信文、日期、转寄链、鉴定环节均据外交部解密档案与公开史料；
+          九位角色逐一标注【史实人物】或【虚构人物】，并附
+          <em>史实与虚构对照表</em>，供评委逐条核验。
+        </p>
+      </article>
+      <article class="card card-flat reveal">
+        <span class="card-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><circle cx="12" cy="12" r="8.2"/><path d="M12 3.8v16.4M3.8 12h16.4"/><path d="M12 7.6 8.4 12H12l-3.6 4.4"/></svg>
+        </span>
+        <p class="card-value">竺可桢与求是精神</p>
+        <p class="card-desc">
+          1936—1949 长校十三年，率校西迁办学两千里。剧中的鉴定裁决权交给他，
+          题眼是一句<em>「只问是非，不计利害」</em>——求是不只是做学问的方法，
+          是国难时怎么站的位置。
+        </p>
+      </article>
+      <article class="card card-flat reveal">
+        <span class="card-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M3 7.5 12 3.4l9 4.1-9 4.1z"/><path d="M3 12.4l9 4.1 9-4.1"/><path d="M3 16.9l9 4.1 9-4.1"/></svg>
+        </span>
+        <p class="card-value">万里邮路故事</p>
+        <p class="card-desc">
+          商场邮筒 → 比利时 → 上海愚园路 → 北京 → 日内瓦。
+          七位玩家就是这条邮路上的七双手：写信的人、望风的人、转寄的人、
+          鉴定的人、画图的人、递灯的人。
+        </p>
+      </article>
+    </div>
+
+    <!-- 机制速览 -->
+    <div class="mech reveal">
+      <p class="mech-title">机制速览</p>
+      <ul class="mech-list">
+        <li><b>分幕读本</b>全剧四幕 + 终局，读毕进入搜证与讨论</li>
+        <li><b>搜证与私聊</b>每幕一组线索卡，私聊每次 2 分钟</li>
+        <li><b>幕末抉择</b>投递方案 → 暗语破译 → 鉴定预约 → 双投票</li>
+        <li><b>隐藏阵营</b>一名美方线人，另有一名角色被刻意栽赃</li>
+        <li><b>主戏轮转</b>每幕主舞台 1—3 人，其余执行暗场任务，人人有戏</li>
+        <li><b>无淘汰</b>胜负由阵营目标 + 个人情感任务（心声分）综合结算</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════════
+     3　故事时间线
+     ══════════════════════════════════════════════════════════ -->
+<section class="section section-alt" id="timeline">
+  <div class="wrap">
+    <header class="sec-head reveal">
+      <span class="sec-no">贰</span>
+      <h2 class="sec-title">故事时间线</h2>
+      <p class="sec-en">1936 — 1955 · A TIMELINE</p>
+    </header>
+
+    <div class="tl-legend reveal">
+      <span class="tl-legend-item"><i class="dot dot-fact"></i>史实·金色标记 · 有据可查</span>
+      <span class="tl-legend-item"><i class="dot dot-art"></i>剧本艺术演绎·灰色标记 · 戏剧创作</span>
+      <span class="tl-legend-hint">悬停任一节点，展开那一年的小故事</span>
+    </div>
+
+    <ol class="timeline" id="timelineList"></ol>
+
+    <p class="tl-foot reveal">
+      凡标【剧本艺术演绎】者，均为戏剧冲突服务之虚构：内鬼顾维诚、海关暗语、
+      鉴定三步骤与「家人知识测试」皆属玩法设计，不载于史料。
+    </p>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════════
+     4　角色图鉴
+     ══════════════════════════════════════════════════════════ -->
+<section class="section" id="roles">
+  <div class="wrap">
+    <header class="sec-head reveal">
+      <span class="sec-no">叁</span>
+      <h2 class="sec-title">角色图鉴</h2>
+      <p class="sec-en">SEVEN HANDS ON ONE LETTER</p>
+    </header>
+
+    <p class="sec-lead reveal">
+      基础七人，另设两位浙大可选拓展角色。<em>此处只作人物介绍，不含任何剧本正文与线索内容。</em>
+      悬停卡片可展开人物梗概——手机端请轻触卡片右下角。
+    </p>
+
+    <h3 class="sub-title reveal">基础七人</h3>
+    <div class="role-grid" id="roleGridMain"></div>
+
+    <h3 class="sub-title reveal">浙大可选拓展 · 第 8、9 号角色</h3>
+    <div class="role-grid role-grid-2" id="roleGridExtra"></div>
+
+    <p class="role-foot reveal">
+      注：顾维诚、沈砚秋为虚构人物；叶笃正、竺可桢、范绪箕、钱学森、蒋英、蒋华、陈叔通
+      之身份与核心事迹均本于公开史料，剧中对白与心理描写系文学化处理。
+    </p>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════════
+     5　剧本核心亮点
+     ══════════════════════════════════════════════════════════ -->
+<section class="section section-alt" id="highlights">
+  <div class="wrap">
+    <header class="sec-head reveal">
+      <span class="sec-no">肆</span>
+      <h2 class="sec-title">剧本核心亮点</h2>
+      <p class="sec-en">FOUR PILLARS</p>
+    </header>
+
+    <div class="pillar-grid">
+      <article class="pillar reveal">
+        <span class="pillar-no">01</span>
+        <span class="pillar-icon" aria-hidden="true">
+          <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M7 4h13l6 6v18H7z"/><path d="M20 4v6h6"/><path d="M11 16h11M11 21h8"/></svg>
+        </span>
+        <h3 class="pillar-title">史料严谨</h3>
+        <p class="pillar-text">
+          信文全文、6 月 15 日落款、附 1953.3.6《纽约时报》剪报、7 月 11 日陈叔通收信、
+          竺可桢鉴定笔迹、张稼夫致函陈毅、7 月 21 日批示「想办法」、8 月 4 日放行、
+          9 月 17 日登船、10 月 8 日罗湖桥——皆有出处。所有线索卡标注出处，
+          一手优先，虚构与艺术加工逐条声明。
+        </p>
+      </article>
+
+      <article class="pillar reveal">
+        <span class="pillar-no">02</span>
+        <span class="pillar-icon" aria-hidden="true">
+          <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M16 3.5 27 8v9c0 6-4.6 9.7-11 11.5C9.6 26.7 5 23 5 17V8z"/><path d="m11 16 3.6 3.6L21.5 13"/></svg>
+        </span>
+        <h3 class="pillar-title">求是校史内核</h3>
+        <p class="pillar-text">
+          竺可桢线横跨三幕主舞台与两段暗场：开门之人、翻日记、接信、鉴定裁决、终局交棒。
+          范绪箕线以情义相承：愚园路探望、上海接力、雨夜同行、家人知识测试、终局递灯。
+          两线共同落点，是浙大人的「求是」。
+        </p>
+      </article>
+
+      <article class="pillar reveal">
+        <span class="pillar-no">03</span>
+        <span class="pillar-icon" aria-hidden="true">
+          <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.2"><circle cx="16" cy="16" r="11.5"/><path d="M16 4.5v23M4.5 16h23"/><circle cx="16" cy="16" r="4.5"/></svg>
+        </span>
+        <h3 class="pillar-title">无凶案阵营玩法</h3>
+        <p class="pillar-text">
+          不靠尸体与尖叫支撑张力。推理落在「真假嫌疑」上：一名美方线人，
+          一名被刻意栽赃的角色。破绽不在血腥处，在日期、语境、附件的三者不合，
+          在一碗豆腐卤配稀饭，在一个说漏了的弄堂号。
+        </p>
+      </article>
+
+      <article class="pillar reveal">
+        <span class="pillar-no">04</span>
+        <span class="pillar-icon" aria-hidden="true">
+          <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M16 3.5c4 4.5 6 8.2 6 11.4a6 6 0 0 1-12 0c0-3.2 2-6.9 6-11.4z"/><path d="M16 28.5v-9"/><path d="M11 25h10"/></svg>
+        </span>
+        <h3 class="pillar-title">仪式感沉浸体验</h3>
+        <p class="pillar-text">
+          左手仿儿童笔迹写封、唱片曲目单暗语、鉴定三步骤当众裁决、
+          终局传阅香烟纸复刻件并齐读「无一日、一时、一刻不思归国」。
+          文化底蕴被做成可玩的动作，而不是背景板上的装饰。
+        </p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════════
+     6　机制与结局分支
+     ══════════════════════════════════════════════════════════ -->
+<section class="section" id="endings">
+  <div class="wrap">
+    <header class="sec-head reveal">
+      <span class="sec-no">伍</span>
+      <h2 class="sec-title">机制与结局分支</h2>
+      <p class="sec-en">FOUR ENDINGS</p>
+    </header>
+
+    <p class="sec-lead reveal">
+      信件能否成功上报中央，与线人能否被指认——两件事各走一路，交叉出四种结局。
+      点击下方标签切换查看。
+    </p>
+
+    <div class="tabs reveal" id="endingTabs">
+      <div class="tablist" role="tablist" aria-label="结局分支">
+        <button class="tab" role="tab" id="tab-grand" aria-controls="panel-grand" aria-selected="true" data-key="grand">大捷</button>
+        <button class="tab" role="tab" id="tab-small" aria-controls="panel-small" aria-selected="false" tabindex="-1" data-key="small">小胜</button>
+        <button class="tab" role="tab" id="tab-close" aria-controls="panel-close" aria-selected="false" tabindex="-1" data-key="close">惜败</button>
+        <button class="tab" role="tab" id="tab-dark" aria-controls="panel-dark" aria-selected="false" tabindex="-1" data-key="dark">暗败</button>
+      </div>
+      <div class="tabpanels" id="endingPanels"></div>
+    </div>
+
+    <div class="vote-note reveal">
+      <p class="vote-note-title">终局双投票</p>
+      <p>① 谁是线人；② 上报路径——直呈周总理，还是循中科院系统逐级上报。
+        <em>史实为后者</em>，与史实一致者计全分。</p>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════════
+     7　高光仪式 · 互动摘录
+     ══════════════════════════════════════════════════════════ -->
+<section class="section section-alt" id="quotes">
+  <div class="wrap">
+    <header class="sec-head reveal">
+      <span class="sec-no">陆</span>
+      <h2 class="sec-title">高光仪式 · 互动摘录</h2>
+      <p class="sec-en">THE RITUAL · EXCERPTS</p>
+    </header>
+
+    <p class="sec-lead reveal">剧本里最安静的两处高光，都写在一张纸上。</p>
+
+    <div class="quote-grid">
+      <figure class="quote-paper reveal">
+        <span class="quote-tag quote-tag-fact">求援信 · 节选 · 史实</span>
+        <blockquote>
+          <p class="quote-salute">叔通太老师先生：</p>
+          <p>自 1947 年 9 月拜别后未通信，然自报章期刊上见到老先生为人民服务及努力的精神，使我们感动佩服！学森数年前认识错误，以致被美政府拘留，今已五年。<em>无一日、一时、一刻不思归国参加伟大的建设高潮。</em></p>
+          <p>附上纽约时报旧闻一节，为学森五年来在美之处境。</p>
+          <p class="quote-sign">在无限期望中祝您康健<br><span>钱学森谨上　1955 年 6 月 15 日</span></p>
+        </blockquote>
+        <figcaption>节选自 1955 年 6 月 15 日香烟纸求援信原件，全文见剧本附录一。</figcaption>
+      </figure>
+
+      <figure class="quote-paper quote-paper-blue reveal">
+        <span class="quote-tag quote-tag-fact">竺可桢 · 题眼 · 史实</span>
+        <blockquote>
+          <p class="quote-big">只问是非，<br>不计利害。</p>
+          <p>这一封信是不是真的，是是非；把它送到哪里去，是利害。<br>我们求是的人，先问是非。</p>
+        </blockquote>
+        <figcaption>第四幕「求是」题眼。鉴定次序：先对日期，再对笔势，最后对事理。</figcaption>
+      </figure>
+    </div>
+
+    <div class="quote-more reveal">
+      <p class="quote-more-title">另有这些句子，被写进了四幕与终局</p>
+      <div class="quote-chips">
+        <span class="quote-chip">求是精神，就是排万难、冒百死，以求真知。<i>竺可桢 · 1939</i></span>
+        <span class="quote-chip">海外学子，报国无门者众。吾辈当为开门之人。<i>日记体线索卡 · 仿写</i></span>
+        <span class="quote-chip">笔迹要核，路径要把。<i>第三幕</i></span>
+        <span class="quote-chip">条件这么差还能做事，难得。<i>1947 · 航空实验室</i></span>
+        <span class="quote-chip">天有不测风云的时代，该在中国结束了。<i>叶笃正</i></span>
+        <span class="quote-chip">大不自多，海纳江河。<i>浙大校歌 · 马一浮词 · 1938</i></span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════════
+     8　参演 & 展演信息
+     ══════════════════════════════════════════════════════════ -->
+<section class="section" id="showcase">
+  <div class="wrap">
+    <header class="sec-head reveal">
+      <span class="sec-no">柒</span>
+      <h2 class="sec-title">参演 &amp; 展演信息</h2>
+      <p class="sec-en">FOR CAMPUS SHOWCASE</p>
+    </header>
+
+    <div class="showcase-grid">
+      <article class="show-card show-card-main reveal">
+        <p class="show-label">单场时长</p>
+        <p class="show-value"><span class="show-num">3</span> 小时</p>
+        <p class="show-desc">四幕 + 终局，含读本、搜证、私聊、幕末抉择与齐读仪式</p>
+        <ul class="show-rows">
+          <li><span>人数</span><b>7 人主线 / 9 人满配 + DM</b></li>
+          <li><span>场地</span><b>一间可围坐的教室或活动室，一张长桌，一盏可调的灯</b></li>
+          <li><span>道具</span><b>香烟纸复刻件、剪报、誊本、日记页、唱片曲目单、邮路图</b></li>
+          <li><span>主持</span><b>1 名 DM，全程按主持词推进，可支配 2—3 名浙大 NPC</b></li>
+        </ul>
+      </article>
+
+      <div class="show-side">
+        <article class="show-card reveal">
+          <p class="show-label">适合场景</p>
+          <ul class="show-scenes">
+            <li><i aria-hidden="true">◇</i>校园思政活动 · 主题班会与团日活动</li>
+            <li><i aria-hidden="true">◇</i>校史展演 · 建校周年与校史馆开放日</li>
+            <li><i aria-hidden="true">◇</i>学生社团 · 话剧社、推理社、读书会专场</li>
+            <li><i aria-hidden="true">◇</i>新人教育 · 入学季的校史第一课</li>
+          </ul>
+        </article>
+
+        <article class="show-card reveal">
+          <p class="show-label">参与方式</p>
+          <p class="show-desc">
+            采用 7 人主线时，DM 仍可以 NPC 形式让浙大人参与现场——
+            青年教师朗读 1947 年听讲笔记，在校学生复现
+            <em>1955 年 10 月 15 日「热情包围」</em>的一幕，
+            让浙大成为全场可感的氛围，而非背景板。
+          </p>
+        </article>
+
+        <article class="show-card show-card-quote reveal">
+          <p>「今晚没有谁是主角。写信的人、望风的人、转寄的人、鉴定的人、画图的人、递灯的人——一条路，许多双手。」</p>
+          <span>主题收束词 · DM 朗读</span>
+        </article>
+      </div>
+    </div>
+
+    <div class="end-note reveal">
+      <p class="end-note-title">关于虚实</p>
+      <p>
+        本作所涉真实历史人物之言行，均本于公开史料；虚构人物沈砚秋、顾维诚，
+        以及海关暗语、左手写封、鉴定三步骤、「家人知识测试」等玩法设计，
+        已在剧本内与《史实与虚构对照表》中双重声明。若提交材料含 AI 辅助生成的
+        视觉参考，另须注明工具名称、使用场景、内容比例与人工修改情况。
+      </p>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ══════════════════════════════════════════════════════════
+     9　页脚
+     ══════════════════════════════════════════════════════════ -->
+<footer class="footer">
+  <div class="wrap footer-inner">
+    <div class="footer-lantern" aria-hidden="true"></div>
+
+    <p class="footer-quote">求是者，只问是非，不计利害。</p>
+    <p class="footer-sub">
+      2027 年，浙江大学建校一百三十周年。求是精神从来不是一块牌匾，
+      它是一堆具体的动作——是西迁路上灯油将尽仍要讲完的那一节课，
+      是为了一封真信「先对日期、再对笔势、最后对事理」的这份较真，
+      是在什么都看不到的夜里，仍然选择把信投出去。
+    </p>
+
+    <div class="footer-seal" aria-hidden="true">
+      <span class="footer-seal-text">归舟已至</span>
+      <span class="footer-seal-sub">下一程的灯，请接着递</span>
+    </div>
+
+    <div class="footer-meta">
+      <p><b>《归舟 · 1955》</b>香烟纸上的万里归途 · 沉浸式红色剧本杀</p>
+      <p>参赛类别：创意类（剧本杀）｜主题：探寻校史荣光，传承求是精神</p>
+      <p>7—9 人 + DM｜约 3 小时｜阵营 · 情感 · 推理（无凶案，有内鬼）</p>
+    </div>
+
+    <p class="footer-legal">
+      本剧本为校园参赛作品。剧中严格区分史实与戏剧演绎：真实人物与事件依公开史料呈现，
+      虚构角色、虚构情节与玩法设计均已逐条声明；剧中日记体线索卡系仿写，
+      正式印制前应核对《竺可桢全集》并标注。
+    </p>
+  </div>
+</footer>
+
+<script src="main.js"></script>
+</body>
+</html>
