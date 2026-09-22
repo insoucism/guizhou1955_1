@@ -64,6 +64,47 @@ main.js       时间线 / 角色图鉴 / 结局分支的数据与交互
 实测覆盖 1600×1000、1440×860、1388×755（高 DPI 外接屏）、1082×603、842×603、518×803
 等视口，均无横向溢出、滚动提示在首屏折内。
 
+## 部署
+
+本站已发布在 GitHub Pages：
+
+- 仓库：<https://github.com/insoucism/guizhou1955_1>
+- 网址：**<https://insoucism.github.io/guizhou1955_1/>**
+
+发布方式：Source = `Deploy from a branch` / `main` / `/`，站点根目录放 `.nojekyll`
+让 Pages 跳过 Jekyll（否则下划线开头的 `_verify/` 不会被发布）。
+
+### 以后怎么更新
+
+**方式一 · 网页上传（最省事）**
+在 GitHub 仓库页点 `Add file → Upload files`，把改好的文件拖进去即可，
+Pages 会自动重新构建，一两分钟后生效。
+
+**方式二 · 本机 git push**
+
+```powershell
+cd "D:\Deepseek workplace\coding\guizhou-1955"
+git add -A
+git commit -m "更新"
+git push
+```
+
+> 注意：这台机器上到 `github.com:443` 的 TCP 连接被网络策略挡住
+> （`api.github.com` 可达），所以 `git push` 会超时。换一台能连 GitHub 的机器，
+> 或在网页上更新。
+
+**方式三 · 走 API 直传（不需要 git push）**
+
+本目录已有一键脚本，用 GitHub 令牌经 `api.github.com` 建 commit：
+
+```powershell
+$env:GH_TOKEN = "你的令牌"   # 需要 repo 作用域
+node _verify\deploy-api.js --repo guizhou1955_1 --user insoucism --pages
+```
+
+脚本幂等：仓库已存在则复用，按内容重建 tree 并快进 `main`。
+令牌只从环境变量读，不写入任何文件。
+
 ## 渲染取证（`_verify/`）
 
 `_verify/` 是开发时用来做**真实渲染取证**的脚本，不属于页面运行的一部分，**可整体删除**。
