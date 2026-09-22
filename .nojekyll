@@ -1,0 +1,4 @@
+这台站点是纯静态的，不需要 Jekyll 处理。
+放这个空文件是为了让 GitHub Pages 跳过 Jekyll：
+Jekyll 默认会忽略以下划线开头的目录（本仓库的 _verify/ 就是），
+关掉之后 _verify/ 也能正常发布，便于评审直接点开复核。
